@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPager2"
+        android:layout_width="412dp"
+        android:layout_height="545dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toBottomOf="@+id/appList"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="413dp"
+        android:layout_height="56dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="#6F4BBE"
+        app:tabTextColor="#B388FF">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/installed" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/archived" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <ListView
+        android:id="@+id/appList"
+        android:layout_width="408dp"
+        android:layout_height="492dp"
+        android:layout_marginTop="58dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tabLayout">
+
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="305dp"
+        android:layout_height="49dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextSizeCheck">
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/deleteBackupButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:backgroundTint="#7C4DFF"
+            android:onClick="onDeleteBackupButtonClick"
+            android:text="@string/delete_backup"
+            android:textAlignment="viewStart"
+            android:textColor="@color/white"
+            app:icon="@drawable/delete"
+            app:iconSize="22dp"
+            app:iconTint="#DE0707"
+            tools:ignore="UsingOnClickInXml" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/shareButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:backgroundTint="#7C4DFF"
+            android:text="@string/share"
+            android:textAlignment="viewStart"
+            android:textColor="@color/white"
+            android:textColorLink="#A3ADB7"
+            app:icon="@drawable/share"
+            app:iconSize="22dp"
+            app:iconTint="#00BCD4" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="337dp"
+        android:layout_height="52dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/backupButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/backup"
+            android:textAlignment="viewStart"
+            app:icon="@drawable/synchronize"
+            app:iconSize="21dp"
+            app:iconTint="#4CC400"
+            android:backgroundTint="#7C4DFF"
+            android:textColor="@color/white"
+            />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/restoreButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRestoreButtonClick"
+            android:text="@string/restore"
+            android:textAlignment="viewStart"
+            android:textColorLink="#7300FF"
+            app:icon="@drawable/restore"
+            app:iconSize="21dp"
+            app:iconTint="#F57F17"
+            android:backgroundTint="#7C4DFF"
+            android:textColor="@color/white"
+            tools:ignore="UsingOnClickInXml" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/refreshButton"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#7C4DFF"
+            android:isScrollContainer="false"
+            android:onClick="onRefreshButtonClick"
+            android:textAlignment="textEnd"
+            android:textColor="@color/white"
+            app:icon="@drawable/refresh"
+            app:iconGravity="start|end"
+            app:iconPadding="0dp"
+            app:iconSize="24dp"
+            app:iconTint="#00BCD4"
+            tools:ignore="UsingOnClickInXml,SpeakableTextPresentCheck" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

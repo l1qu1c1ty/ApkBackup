@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name" translatable="false">Apk Backup</string>
+    <string name="app_icon_description" translatable="false" >BackupIcon</string>
+    <string name="share" translatable="false">Share</string>
+    <string name="delete_backup" translatable="false">Delete Backup</string>
+    <string name="restore" translatable="false">Restore</string>
+    <string name="backup" translatable="false">Backup</string>
+    <string name="archived" translatable="false">Archived</string>
+    <string name="installed" translatable="false">Installed</string>
+</resources>
